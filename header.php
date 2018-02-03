@@ -75,8 +75,8 @@
             </nav>
         </div>
 </header>
-<section class="main-background clearfix"
-         style="background: url('<?php echo get_header_image(); ?>') center center/cover; ">
+<section class="main-background clearfix">
+    <?php echo do_shortcode('[metaslider id="267"]'); ?>
     <div class="container-background">
         <h1 class="main-heading"><?php echo get_theme_mod('header_heading'); ?>
             <span class="subheading">
@@ -88,8 +88,10 @@
     </div>
     <div class="progress-bar-container">
         <div class="progress-bar"></div>
-    </div>
 </section>
+
+
+
 
 
 
