@@ -186,39 +186,260 @@ add_action('wp_enqueue_scripts', 'enqueue_font_awesome');
 
 function letsrock_customize_register($wp_customize)
 {
+    /*footer*/
+    $wp_customize->add_section('copyright_section', array(
+        'title' => __('Copyright settings', 'lets_rock'),
+        'priority' => 35,
+    ));
     $wp_customize->add_setting('footer_copy', array(
         'default' => __('Copyright &copy; 2009-2016 <span id="cantus-link">cantus</span> their respective owners. Shipped from Salem, Mass. USA.', 'lets_rock'),
         'transport' => 'refresh',
     ));
-    $wp_customize->add_section('copyright_section', array(
-        'title' => __('Copyright settings', 'lets_rock'),
-        'priority' => 30,
-    ));
-    $wp_customize->add_control(
-        'footer_copy', array(
-            'label' => __('Copyright info in footer', 'lets_rock'),
-            'section' => 'copyright_section',
-            'settings' => 'footer_copy',
-            'type' => 'textarea',
-        )
-    );
 
-    $wp_customize->add_setting('header_image', array(
-        'default' => __('<h1 class="main-heading">LET`S ROCK<span class="subheading">With Cantus</span></h1>discover more', 'lets_rock'),
+    $wp_customize->add_control('footer_copy', array(
+        'label' => __('Copyright info in footer', 'lets_rock'),
+        'section' => 'copyright_section',
+        'settings' => 'footer_copy',
+        'type' => 'textarea',
+    ));
+
+    /*main background/H1*/
+    $wp_customize->add_section('header_image_section', array(
+        'title' => __('Header image settings', 'lets_rock'),
+        'priority' => 31,
+    ));
+    $wp_customize->add_setting('header_heading', array(
+        'default' => __('H1', 'lets_rock'),
         'transport' => 'refresh',
     ));
-    $wp_customize->add_section('header_image_section', array(
-        'title' => __('Background image settings', 'lets_rock'),
-        'priority' => 30,
+    $wp_customize->add_setting('header_subheading', array(
+        'default' => __('Subheading', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('header_button', array(
+        'default' => __('Button', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('header_url', array(
+        'default' => __('Button url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('header_heading', array(
+        'label' => __('Main heading in header', 'lets_rock'),
+        'section' => 'header_image_section',
+        'settings' => 'header_heading',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('header_subheading', array(
+        'label' => __('Subheading in header', 'lets_rock'),
+        'section' => 'header_image_section',
+        'settings' => 'header_subheading',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('header_button', array(
+        'label' => __('Button name', 'lets_rock'),
+        'section' => 'header_image_section',
+        'settings' => 'header_button',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('header_url', array(
+        'label' => __('Url', 'lets_rock'),
+        'section' => 'header_image_section',
+        'settings' => 'header_url',
+        'type' => 'text',
+    ));
+
+    /*social media*/
+    $wp_customize->add_section('header_socials', array(
+        'title' => __('Header social icons', 'lets_rock'),
+        'priority' => 31,
+    ));
+    $wp_customize->add_setting('social_facebook', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('social_twitter', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('social_googleplus', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('facebook_likes', array(
+        'default' => __('Quantity', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('twitter_likes', array(
+        'default' => __('Quantity', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('googleplus_likes', array(
+        'default' => __('Quantity', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('header_button_name', array(
+        'default' => __('Title', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('header_button_url', array(
+        'default' => __('Url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('social_facebook', array(
+        'label' => __('Facebook site url', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'social_facebook',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('social_twitter', array(
+        'label' => __('Twitter site url', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'social_twitter',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('social_googleplus', array(
+        'label' => __('Google-plus site url', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'social_googleplus',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('facebook_likes', array(
+        'label' => __('Number of Facebook likes', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'facebook_likes',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('twitter_likes', array(
+        'label' => __('Number of Twitter likes', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'twitter_likes',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('googleplus_likes', array(
+        'label' => __('Number of Google+ likes', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'googleplus_likes',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('header_button_name', array(
+        'label' => __('Purchase button', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'header_button_name',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('header_button_url', array(
+        'label' => __('Purchase button url', 'lets_rock'),
+        'section' => 'header_socials',
+        'settings' => 'header_button_url',
+        'type' => 'text',
+    ));
+
+    /*founder section*/
+    $wp_customize->add_section('founder_section', array(
+        'title' => __('Founder section', 'lets_rock'),
+        'priority' => 31,
+    ));
+    $wp_customize->add_setting('founder_heading', array(
+        'default' => __('Enter h1', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('founder_desc', array(
+        'default' => __('Enter description', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('founder_popup_button', array(
+        'default' => __('Discover more', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('founder_popup_url', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('founder_image', array(
+        'default' => __('', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('popup_heading', array(
+        'default' => __('Enter h5', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('popup_desc', array(
+        'default' => __('Enter description', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('close_popup', array(
+        'default' => __('Close window', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_setting('close_popup_url', array(
+        'default' => __('url', 'lets_rock'),
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('founder_heading', array(
+        'label' => __('Main heading of the section', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'founder_heading',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('founder_desc', array(
+        'label' => __('Description of the section', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'founder_desc',
+        'type' => 'textarea',
+    ));
+    $wp_customize->add_control('founder_popup_button', array(
+        'label' => __('Popup button', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'founder_popup_button',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('founder_popup_url', array(
+        'label' => __('Popup button url', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'founder_popup_url',
+        'type' => 'text',
     ));
     $wp_customize->add_control(
-        'header_image', array(
-            'label' => __('Main heading in header', 'lets_rock'),
-            'section' => 'header_image_section',
-            'settings' => 'header_image',
-            'type' => 'textarea',
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'founder_image',
+            array(
+                'label'      => __( 'Upload an image', 'lets_rock' ),
+                'width' => 1170,
+                'height' => 370,
+                'section'    => 'founder_section',
+                'settings'   => 'founder_image',
+            )
         )
     );
+    $wp_customize->add_control('popup_heading', array(
+        'label' => __('Main heading of the popup', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'popup_heading',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('popup_desc', array(
+        'label' => __('Description of the popup', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'popup_desc',
+        'type' => 'textarea',
+    ));
+    $wp_customize->add_control('close_popup', array(
+        'label' => __('Close popup button', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'close_popup',
+        'type' => 'text',
+    ));
+    $wp_customize->add_control('close_popup_url', array(
+        'label' => __('Close popup button url', 'lets_rock'),
+        'section' => 'founder_section',
+        'settings' => 'close_popup_url',
+        'type' => 'text',
+    ));
 }
 
 add_action( 'customize_register', 'letsrock_customize_register');

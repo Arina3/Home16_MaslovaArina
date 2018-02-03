@@ -1,169 +1,85 @@
 .instagram-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-  flex-direction: row;
-  height: 369px;
-  margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: row;
+    height: 369px;
+    margin-top: 20px;
 }
 
 .song-list {
-  margin: 0;
-  padding: 0;
-  list-style: inside decimal-leading-zero;
-  column-count: 3;
+    margin: 0;
+    padding: 0;
+    list-style: inside decimal-leading-zero;
+    column-count: 3;
 }
 
 li.song-item {
-  min-width: 167px;
-  text-align: left;
-  padding-right: 10px;
-  border-bottom: 1px solid #dfdfdf;
+    min-width: 167px;
+    text-align: left;
+    padding-right: 10px;
+    border-bottom: 1px solid #dfdfdf;
 }
 
 .members-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .member-list {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 li.member {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .member-desc {
-  width: 100%;
-  position: absolute;
-  bottom: -40px;
-  left: 0;
-  background-color: $mark-color;
-  color: $secondary-color;
+    width: 100%;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    background-color: $mark-color;
+    color: $secondary-color;
 
-  &:hover {
+    &:hover {
     bottom: 0;
   }
 }
 
 .member-desc a:hover {
-  display: block;
-  color: $secondary-color;
-  bottom: 0;
-  background-color: $mark-color;
+    display: block;
+    color: $secondary-color;
+    bottom: 0;
+    background-color: $mark-color;
 }
 
 .socials {
-  padding: 0 10px;
-}
-
-div.socials-menu-class ul {
-  display: flex;
-  align-items: center;
-}
-
-div.socials-menu-class {
-  li {
     padding: 0 10px;
-    display: inline-block;
-    a {
-      color: #fff;
-      font-family: "Font Awesome", serif;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 44px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-
-      &:hover {
-        display: block;
-        opacity: 0.5;
-      }
-    }
-  }
 }
 
-#menu-item-147 {
-  a:after {
-    content: '32K';
-    display: inline-block;
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 10px;
-  }
+.socials-items {
+    display: flex;
+    align-items: center;
 }
 
-#menu-item-148 {
-  a:after {
-    content: '55K';
-    display: inline-block;
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 10px;
-  }
-}
-
-#menu-item-149 {
-  a:after {
-    content: '23K';
-    display: inline-block;
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 30px;
-    padding: 10px;
-  }
-}
-
-#menu-item-152 {
-  a {
-    width: 200px;
-    height: 50px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    border-radius: 25px;
-    background-color: $secondary-color;
-    color: $mark-color;
-    font-family: "Droid Sans",sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 50px;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    text-align: center;
-
-    &:hover {
-      background-color: $mark-color;
-      color: $secondary-color;
-      border: 2px solid $secondary-color!important;
-    }
-  }
-}
-
-  li.socials-popup {
+li.socials-popup {
     padding: 0 20px;
-  }
+}
 
-  .bottom-menu-items {
+.bottom-menu-items {
     display: flex;
     justify-content: space-evenly;
-  }
+}
 
-  .instagram-image-link:hover {
+.instagram-image-link:hover {
     opacity: 0.5;
-  }
+}
 
-  .slider li {
+.slider li {
     width: 100%;
-  }
+}

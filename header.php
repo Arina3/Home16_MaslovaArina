@@ -38,17 +38,59 @@
                 </a>
             </div>
             <nav class="socials-bar">
-                <?php wp_nav_menu(array(
-                    'theme_location' => 'header-socials-menu',
-                    'container_class' => 'socials-menu-class',
-                    'menu_id' => 'socials-menu',
-                ));
-                ?>
+                <ul class="socials-items">
+                    <li class="socials">
+                        <a href="<?php echo get_theme_mod('social_facebook'); ?>" class="socials-link" target="_blank">
+                            <i class="fa fa-facebook" aria-hidden="true" title="facebook">
+                                <span class="like-number">
+                                    <?php echo get_theme_mod('facebook_likes'); ?>
+                                </span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="socials">
+                        <a href="<?php echo get_theme_mod('social_twitter'); ?>" class="socials-link" target="_blank">
+                            <i class="fa fa-twitter" aria-hidden="true" title="twitter">
+                                <span class="like-number">
+                                    <?php echo get_theme_mod('twitter_likes'); ?>
+                                </span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="socials">
+                        <a href="<?php echo get_theme_mod('social_googleplus'); ?>" class="socials-link"
+                           target="_blank">
+                            <i class="fa fa-google-plus" aria-hidden="true" title="google-plus">
+                                <span class="like-number">
+                                    <?php echo get_theme_mod('googleplus_likes'); ?>
+                                </span>
+                            </i>
+                        </a>
+                    </li>
+                    <li class="purchase">
+                        <a href="<?php echo get_theme_mod('header_button_url'); ?>" class="purchase-link-header"
+                           target="_blank"><?php echo get_theme_mod('header_button_name'); ?></a>
+                    </li>
+                </ul>
             </nav>
         </div>
 </header>
-<?php echo get_theme_mod('header_image') ?>
+<section class="main-background clearfix"
+         style="background: url('<?php echo get_header_image(); ?>') center center/cover; ">
+    <div class="container-background">
+        <h1 class="main-heading"><?php echo get_theme_mod('header_heading'); ?>
+            <span class="subheading">
+                <?php echo get_theme_mod('header_subheading'); ?>
+            </span>
+        </h1>
+        <a href="<?php echo get_theme_mod('header_url'); ?>" class="discover-link"
+           target="_self"><?php echo get_theme_mod('header_button'); ?></a>
+    </div>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+</section>
 
-    <div id="content" class="site-content">
+
 
 
